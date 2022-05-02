@@ -1,11 +1,11 @@
 from airflow.plugins_manager import AirflowPlugin
 from xpath_evaluation.links.evaluated_url import EvaluatedUrlLink
-from xpath_evaluation.operators.xpath_evaluation_operator import XPathEvaluationOperator
+from xpath_evaluation.operators.xpath_evaluation_operator import XPathDatetimeEvaluationOperator, XPathStrEvaluationOperator
 
 
 class AirflowXPathEvaluationOperatorPlugin(AirflowPlugin):
     name = "xpath_evaluation_operator"
-    operators = [XPathEvaluationOperator]
+    operators = [XPathDatetimeEvaluationOperator, XPathStrEvaluationOperator]
     sensors = []
     hooks = []
     executors = []
